@@ -28,7 +28,6 @@ public class GridStatus : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag);
         if (other.CompareTag("GridChecker"))
         {
             isSelectable = true;
@@ -44,11 +43,12 @@ public class GridStatus : MonoBehaviour
 
     public void SelectGrid()
     {
+        if (!gameplayManager.isPlayerMovable) return;
         Player player = gameplayManager.player;
         player.transform.position = transform.position;
         gridManager.ResetSelectableGrid();
         player.PlayerMove(transform.position);
-
+        gridManager.selectedGrid = this;
     }
 
     void OnMouseEnter()

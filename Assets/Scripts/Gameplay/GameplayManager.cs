@@ -16,6 +16,10 @@ public class GameplayManager : MonoBehaviour
     public Player player;
     public GridManager gridManager;
     public EnemyManager enemyManager;
+    public GameplayUiManager gameplayUiManager;
+    private bool isFinish = false;
+    private bool isWin = false;
+    public bool isPlayerMovable = true;
 
     // Start is called before the first frame update
     void Start()
@@ -37,18 +41,25 @@ public class GameplayManager : MonoBehaviour
         switch (phase)
         {
             case GamePhase.player:
+                isPlayerMovable = true;
                 player.ActivateCheckBox();
                 break;
             case GamePhase.enemy:
                 if (isFirstTime)
                 {
                     isFirstTime = false;
+                    isPlayerMovable = true;
                     return;
                 }
                 enemyManager.MoveAllEnemy();
                 StartCoroutine(WaitAndChangePhase(1, GamePhase.result));
                 break;
             case GamePhase.result:
+                if(isFinish)
+                {
+                    gameplayUiManager.OpenFinishUi(isWin);
+                    return;
+                }
                 StartCoroutine(WaitAndChangePhase(1, GamePhase.end));
                 break;
             case GamePhase.end:
@@ -61,5 +72,11 @@ public class GameplayManager : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         UpdatePhase(nextPhase);
+    }
+
+    public void GameFinish(bool isWin)
+    {
+        isFinish = true;
+        this.isWin = isWin;
     }
 }

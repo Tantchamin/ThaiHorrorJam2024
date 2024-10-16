@@ -12,27 +12,28 @@ public class Player : MonoBehaviour
         this.gameplayManager = gameplayManager;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.CompareTag("Goal"))
+        {
+            gameplayManager.GameFinish(true);
+        }
+        else if (other.CompareTag("Enemy"))
+        {
+            gameplayManager.GameFinish(false);
+        }
     }
 
     public void PlayerMove(Vector3 position)
     {
         transform.position = position;
+        gameplayManager.isPlayerMovable = false;
         gameplayManager.UpdatePhase(GamePhase.enemy);
     }
 
     public void ActivateCheckBox()
     {
-        StartCoroutine(OpenAndCloseCheckBox(0.5f));
+        StartCoroutine(OpenAndCloseCheckBox(0.1f));
     }
 
     IEnumerator OpenAndCloseCheckBox(float waitTime)
@@ -41,4 +42,5 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         checkBoxs.SetActive(false);
     }
+
 }

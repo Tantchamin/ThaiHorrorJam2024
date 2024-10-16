@@ -10,6 +10,18 @@ public class LoadSceneManager : MonoBehaviour
         SceneManager.LoadScene(index);
     }
 
+    public void LoadCurrentScene()
+    {
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(sceneIndex);
+    }
+
+    public void NextScene()
+    {
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(sceneIndex + 1);
+    }
+
     public void Exit()
     {
         Application.Quit();

@@ -6,6 +6,7 @@ public class GridManager : MonoBehaviour
 {
     public List<GridStatus> grids;
     public GridStatus selectedGrid;
+    public GridStatus goalGrid;
     public GameplayManager gameplayManager;
 
     public void InitGrids()
