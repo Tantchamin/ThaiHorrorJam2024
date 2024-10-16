@@ -6,16 +6,15 @@ public class GridStatus : MonoBehaviour
 {
     public bool isSelected = false;
     public bool isSelectable = false;
-    public List<GridStatus> connectedGrids;
     private Renderer objRenderer;
     private Color originalColor;
     public Color hoverColor = Color.red;  // Color when hovered
-    private GameManager gameManager;
+    private GameplayManager gameplayManager;
     private GridManager gridManager;
 
-    public void Init(GameManager gameManager, GridManager gridManager)
+    public void Init(GameplayManager gameplayManager, GridManager gridManager)
     {
-        this.gameManager = gameManager;
+        this.gameplayManager = gameplayManager;
         this.gridManager = gridManager;
     }
 
@@ -27,6 +26,15 @@ public class GridStatus : MonoBehaviour
         originalColor = objRenderer.material.color;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.tag);
+        if (other.CompareTag("GridChecker"))
+        {
+            isSelectable = true;
+        }
+    }
+
     private void OnMouseDown()
     {
         if (isSelectable)
@@ -36,13 +44,11 @@ public class GridStatus : MonoBehaviour
 
     public void SelectGrid()
     {
-        Player player = gameManager.player;
+        Player player = gameplayManager.player;
         player.transform.position = transform.position;
         gridManager.ResetSelectableGrid();
-        foreach(GridStatus grid in connectedGrids)
-        {
-            grid.isSelectable = true;
-        }
+        player.PlayerMove(transform.position);
+
     }
 
     void OnMouseEnter()

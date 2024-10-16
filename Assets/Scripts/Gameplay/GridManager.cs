@@ -6,13 +6,13 @@ public class GridManager : MonoBehaviour
 {
     public List<GridStatus> grids;
     public GridStatus selectedGrid;
-    public GameManager gameManager;
+    public GameplayManager gameplayManager;
 
-    private void Awake()
+    public void InitGrids()
     {
         for (int number = 0; number < grids.Count; number++)
         {
-            grids[number].Init(gameManager, this);
+            grids[number].Init(gameplayManager, this);
         }
     }
 
