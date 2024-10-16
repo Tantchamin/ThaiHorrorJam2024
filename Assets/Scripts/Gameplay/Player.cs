@@ -27,11 +27,10 @@ public class Player : MonoBehaviour
     public void PlayerMove(Vector3 position)
     {
         transform.position = position;
-        ActivateCheckBox();
         gameplayManager.UpdatePhase(GamePhase.enemy);
     }
 
-    private void ActivateCheckBox()
+    public void ActivateCheckBox()
     {
         StartCoroutine(OpenAndCloseCheckBox(0.5f));
     }

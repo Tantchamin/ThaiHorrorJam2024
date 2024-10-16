@@ -16,7 +16,6 @@ public class GameplayManager : MonoBehaviour
     public Player player;
     public GridManager gridManager;
     public EnemyManager enemyManager;
-    [SerializeField] private GameObject clickBlocker;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +23,7 @@ public class GameplayManager : MonoBehaviour
         player.Init(this);
         gridManager.InitGrids();
         gridManager.grids[0].SelectGrid();
+        player.ActivateCheckBox();
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class GameplayManager : MonoBehaviour
         switch (phase)
         {
             case GamePhase.player:
-                clickBlocker.SetActive(false);
+                player.ActivateCheckBox();
                 break;
             case GamePhase.enemy:
                 if (isFirstTime)
@@ -45,7 +45,6 @@ public class GameplayManager : MonoBehaviour
                     isFirstTime = false;
                     return;
                 }
-                clickBlocker.SetActive(true);
                 enemyManager.MoveAllEnemy();
                 StartCoroutine(WaitAndChangePhase(1, GamePhase.result));
                 break;
