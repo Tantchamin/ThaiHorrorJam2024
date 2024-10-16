@@ -282,7 +282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 117978598}
   - component: {fileID: 117978599}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CheckBoxRight
   m_TagString: GridChecker
   m_Icon: {fileID: 0}
@@ -840,7 +840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 380450681}
   - component: {fileID: 380450682}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CheckBoxDown
   m_TagString: GridChecker
   m_Icon: {fileID: 0}
@@ -1077,7 +1077,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -1208,7 +1208,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -1264,6 +1264,7 @@ MonoBehaviour:
   gridManager: {fileID: 1116447783}
   enemyManager: {fileID: 1323669813}
   gameplayUiManager: {fileID: 267307885}
+  isPlayerMovable: 1
 --- !u!1 &542556359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,7 +1275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 542556360}
   - component: {fileID: 542556361}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CheckBoxRight
   m_TagString: GridChecker
   m_Icon: {fileID: 0}
@@ -1330,7 +1331,7 @@ GameObject:
   - component: {fileID: 618760583}
   - component: {fileID: 618760582}
   - component: {fileID: 618760581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1453,7 +1454,7 @@ GameObject:
   - component: {fileID: 645746384}
   - component: {fileID: 645746383}
   - component: {fileID: 645746382}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Goal
   m_Icon: {fileID: 0}
@@ -3444,7 +3445,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -3616,7 +3617,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1496228314}
   - {fileID: 1599101471}
   - {fileID: 1923796058}
   - {fileID: 286791137}
@@ -3687,7 +3687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1117320615}
   - component: {fileID: 1117320616}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CheckBoxLeft
   m_TagString: GridChecker
   m_Icon: {fileID: 0}
@@ -4041,7 +4041,7 @@ GameObject:
   - component: {fileID: 1217808131}
   - component: {fileID: 1217808130}
   - component: {fileID: 1217808129}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4351,7 +4351,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -4369,7 +4369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1302769551}
   - component: {fileID: 1302769552}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CheckBoxDown
   m_TagString: GridChecker
   m_Icon: {fileID: 0}
@@ -4457,7 +4457,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1316990969}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Goal
   m_TagString: Goal
   m_Icon: {fileID: 0}
@@ -5108,8 +5108,8 @@ GameObject:
   - component: {fileID: 1496228315}
   - component: {fileID: 1496228318}
   - component: {fileID: 1496228319}
-  m_Layer: 0
-  m_Name: TestPlayer
+  m_Layer: 6
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5129,7 +5129,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 776300522}
-  m_Father: {fileID: 1116447782}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1496228315
 SphereCollider:
@@ -5252,7 +5252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1533025798}
   - component: {fileID: 1533025799}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CheckBoxUp
   m_TagString: GridChecker
   m_Icon: {fileID: 0}
@@ -5304,7 +5304,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1597973827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CheckBoxs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5488,7 +5488,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1714340423}
-  - component: {fileID: 1714340425}
   - component: {fileID: 1714340424}
   m_Layer: 0
   m_Name: Plane
@@ -5564,28 +5563,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!64 &1714340425
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714340422}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1720595980
 GameObject:
   m_ObjectHideFlags: 0
@@ -5596,7 +5573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1720595981}
   - component: {fileID: 1720595982}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CheckBoxUp
   m_TagString: GridChecker
   m_Icon: {fileID: 0}
@@ -6434,7 +6411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2110993695}
   - component: {fileID: 2110993696}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CheckBoxLeft
   m_TagString: GridChecker
   m_Icon: {fileID: 0}
@@ -6486,7 +6463,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2133467222}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CheckBoxs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6520,6 +6497,7 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 267307884}
   - {fileID: 446672077}
+  - {fileID: 1496228314}
   - {fileID: 1116447782}
   - {fileID: 526767756}
   - {fileID: 1323669812}
