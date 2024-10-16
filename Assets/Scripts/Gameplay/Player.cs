@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     {
         transform.position = position;
         ActivateCheckBox();
-       // gameplayManager.UpdatePhase(GamePhase.enemy);
+        gameplayManager.UpdatePhase(GamePhase.enemy);
     }
 
     private void ActivateCheckBox()

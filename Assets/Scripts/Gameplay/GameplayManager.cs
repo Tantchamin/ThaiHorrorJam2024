@@ -12,12 +12,16 @@ public enum GamePhase
 
 public class GameplayManager : MonoBehaviour
 {
+    private bool isFirstTime = true;
     public Player player;
     public GridManager gridManager;
+    public EnemyManager enemyManager;
+    [SerializeField] private GameObject clickBlocker;
 
     // Start is called before the first frame update
     void Start()
     {
+        player.Init(this);
         gridManager.InitGrids();
         gridManager.grids[0].SelectGrid();
     }
@@ -33,9 +37,16 @@ public class GameplayManager : MonoBehaviour
         switch (phase)
         {
             case GamePhase.player:
-                
+                clickBlocker.SetActive(false);
                 break;
             case GamePhase.enemy:
+                if (isFirstTime)
+                {
+                    isFirstTime = false;
+                    return;
+                }
+                clickBlocker.SetActive(true);
+                enemyManager.MoveAllEnemy();
                 StartCoroutine(WaitAndChangePhase(1, GamePhase.result));
                 break;
             case GamePhase.result:
