@@ -23,7 +23,7 @@ public class GameplayManager : MonoBehaviour
     private bool isWin = false;
     public bool isPlayerMovable = true;
     private int star = 0;
-    private int stageNumber = 0;
+    public int stageNumber = 0;
 
     private void Awake()
     {
