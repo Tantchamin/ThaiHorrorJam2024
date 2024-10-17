@@ -1286,6 +1286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fcc130dcb8dc247a785278f6ed7e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  conditionTurnCount: 0
   player: {fileID: 1496228318}
   gridManager: {fileID: 1116447783}
   enemyManager: {fileID: 1323669813}
@@ -3804,6 +3805,7 @@ GameObject:
   - component: {fileID: 1217808131}
   - component: {fileID: 1217808130}
   - component: {fileID: 1217808129}
+  - component: {fileID: 1217808133}
   m_Layer: 6
   m_Name: Enemy2
   m_TagString: Enemy
@@ -3849,6 +3851,7 @@ MonoBehaviour:
   - {fileID: 1922414027}
   - {fileID: 24266184}
   isLoop: 1
+  unitMove: {fileID: 1217808133}
 --- !u!135 &1217808130
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3920,6 +3923,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217808127}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1217808133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217808127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4f7d3eddfd51f4fa15fd2058b42e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1219403450
 GameObject:
   m_ObjectHideFlags: 0

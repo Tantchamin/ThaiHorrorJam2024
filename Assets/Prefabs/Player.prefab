@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 4627221946943304924}
   - component: {fileID: 1538954062102031865}
   - component: {fileID: 3241535612192778912}
+  - component: {fileID: 7674957743607259811}
   - component: {fileID: 5559258017624722510}
   m_Layer: 6
   m_Name: Player
@@ -316,6 +317,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkBoxs: {fileID: 3661178717060964398}
+  unitMove: {fileID: 7674957743607259811}
+--- !u!114 &7674957743607259811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7192998506917959886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4f7d3eddfd51f4fa15fd2058b42e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &5559258017624722510
 Rigidbody:
   m_ObjectHideFlags: 0
