@@ -45,7 +45,6 @@ public class GridStatus : MonoBehaviour
     {
         if (!gameplayManager.isPlayerMovable) return;
         Player player = gameplayManager.player;
-        player.transform.position = transform.position;
         gridManager.ResetSelectableGrid();
         player.PlayerMove(transform.position);
         gridManager.selectedGrid = this;
