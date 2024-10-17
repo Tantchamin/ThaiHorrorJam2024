@@ -36,6 +36,7 @@ public class GameplayManager : MonoBehaviour
         gridManager.InitGrids();
         gridManager.grids[0].SelectGrid();
         player.ActivateCheckBox();
+        gameplayUiManager.TurnAdjust(turnCount);
     }
 
     public void UpdatePhase(GamePhase phase)
@@ -68,6 +69,7 @@ public class GameplayManager : MonoBehaviour
                 break;
             case GamePhase.end:
                 turnCount++;
+                gameplayUiManager.TurnAdjust(turnCount);
                 StartCoroutine(WaitAndChangePhase(1, GamePhase.player));
                 break;
         }

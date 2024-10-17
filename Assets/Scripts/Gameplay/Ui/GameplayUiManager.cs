@@ -9,8 +9,17 @@ public class GameplayUiManager : MonoBehaviour
     public GameObject finishUi;
     public Button nextButton;
     public TMP_Text finishText;
+    public TMP_Text stageText;
+    public TMP_Text turnText;
+    public GameObject PauseUi;
 
     public List<Image> starList;
+
+    private void Start()
+    {
+        int stageNumber = PlayerPrefs.GetInt("stage");
+        stageText.text = $"Stage {stageNumber}";
+    }
 
     public void OpenFinishUi(bool isWin)
     {
@@ -30,6 +39,16 @@ public class GameplayUiManager : MonoBehaviour
         {
             star.color = Color.black;
         }
+    }
+
+    public void TurnAdjust(int turn)
+    {
+        turnText.text = $"Turn : {turn}";
+    }
+    public void OpenClosePauseUi()
+    {
+        bool isOpen = PauseUi.activeSelf;
+        PauseUi.SetActive(!isOpen);
     }
     
 }
