@@ -20,20 +20,14 @@ public class GameplayManager : MonoBehaviour
     private bool isFinish = false;
     private bool isWin = false;
     public bool isPlayerMovable = true;
+    private int star = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         player.Init(this);
         gridManager.InitGrids();
         gridManager.grids[0].SelectGrid();
         player.ActivateCheckBox();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void UpdatePhase(GamePhase phase)
@@ -78,5 +72,11 @@ public class GameplayManager : MonoBehaviour
     {
         isFinish = true;
         this.isWin = isWin;
+    }
+
+    public void CollectStar()
+    {
+        gameplayUiManager.CollectStar(star);
+        star++;
     }
 }

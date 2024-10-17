@@ -7,6 +7,7 @@ TagManager:
   - GridChecker
   - Goal
   - Enemy
+  - Star
   layers:
   - Default
   - TransparentFX

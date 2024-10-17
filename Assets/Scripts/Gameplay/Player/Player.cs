@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
         if (other.CompareTag("Goal"))
         {
             gameplayManager.GameFinish(true);
@@ -22,6 +21,11 @@ public class Player : MonoBehaviour
         else if (other.CompareTag("Enemy"))
         {
             gameplayManager.GameFinish(false);
+        }
+        else if (other.CompareTag("Star"))
+        {
+            gameplayManager.CollectStar();
+            Destroy(other.gameObject);
         }
     }
 
