@@ -4080,15 +4080,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Stage1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08f22b5cf64045f47ab0e77be003a9b4, type: 2}
+  m_sharedMaterial: {fileID: -2389657760285372386, guid: 08f22b5cf64045f47ab0e77be003a9b4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4111,7 +4111,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -8142,8 +8142,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Stars : '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08f22b5cf64045f47ab0e77be003a9b4, type: 2}
+  m_sharedMaterial: {fileID: -2389657760285372386, guid: 08f22b5cf64045f47ab0e77be003a9b4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8633,6 +8633,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1323669812}
     m_Modifications:
+    - target: {fileID: 772756632099280944, guid: 0986cbc7113c3704d8214152c916dabf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 772756632099280944, guid: 0986cbc7113c3704d8214152c916dabf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 772756632099280944, guid: 0986cbc7113c3704d8214152c916dabf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2499839226311363721, guid: 0986cbc7113c3704d8214152c916dabf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8820,6 +8832,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 862905517165429752, guid: 77fd7d2d21553ac4b864fe1eb39db1cf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 862905517165429752, guid: 77fd7d2d21553ac4b864fe1eb39db1cf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 862905517165429752, guid: 77fd7d2d21553ac4b864fe1eb39db1cf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3852515553635652838, guid: 77fd7d2d21553ac4b864fe1eb39db1cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
