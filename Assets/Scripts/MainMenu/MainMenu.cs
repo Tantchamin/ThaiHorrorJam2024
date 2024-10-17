@@ -7,6 +7,11 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject selectMenu;
 
+    private void Awake()
+    {
+        SaveLoadData.LoadScoreData();
+    }
+
     public void SelectMenuActive(bool isActive)
     {
         selectMenu.SetActive(isActive);
@@ -15,6 +20,7 @@ public class MainMenu : MonoBehaviour
     public void SelectStage(int stage)
     {
         SceneManager.LoadScene(stage);
+        PlayerPrefs.SetInt("stage", stage);
     }
 
     public void Quit()

@@ -12,6 +12,8 @@ public enum GamePhase
 
 public class GameplayManager : MonoBehaviour
 {
+    [SerializeField] private int conditionTurnCount = 0;
+    private int turnCount = 1; 
     private bool isFirstTime = true;
     public Player player;
     public GridManager gridManager;
@@ -21,6 +23,12 @@ public class GameplayManager : MonoBehaviour
     private bool isWin = false;
     public bool isPlayerMovable = true;
     private int star = 0;
+    private int stageNumber = 0;
+
+    private void Awake()
+    {
+        stageNumber = PlayerPrefs.GetInt("stage");
+    }
 
     void Start()
     {
@@ -52,11 +60,14 @@ public class GameplayManager : MonoBehaviour
                 if(isFinish)
                 {
                     gameplayUiManager.OpenFinishUi(isWin);
+                    ScoreData.SetStar(star, stageNumber);
+                    SaveLoadData.SaveScoreData();
                     return;
                 }
                 StartCoroutine(WaitAndChangePhase(1, GamePhase.end));
                 break;
             case GamePhase.end:
+                turnCount++;
                 StartCoroutine(WaitAndChangePhase(1, GamePhase.player));
                 break;
         }
@@ -70,13 +81,23 @@ public class GameplayManager : MonoBehaviour
 
     public void GameFinish(bool isWin)
     {
+        GetStar(0);
+        if (turnCount <= conditionTurnCount)
+        {
+            GetStar(2);
+        }
         isFinish = true;
         this.isWin = isWin;
     }
 
     public void CollectStar()
     {
-        gameplayUiManager.CollectStar(star);
+        GetStar(1);
+    }
+
+    public void GetStar(int starOrder)
+    {
+        gameplayUiManager.CollectStar(starOrder);
         star++;
     }
 }

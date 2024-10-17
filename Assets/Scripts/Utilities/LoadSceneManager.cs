@@ -19,6 +19,7 @@ public class LoadSceneManager : MonoBehaviour
     public void NextScene()
     {
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt("stage", sceneIndex + 1);
         SceneManager.LoadScene(sceneIndex + 1);
     }
 

@@ -32,5 +32,4 @@ public class GameplayUiManager : MonoBehaviour
         }
     }
     
-
 }
