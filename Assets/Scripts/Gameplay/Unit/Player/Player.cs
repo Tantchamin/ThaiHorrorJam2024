@@ -5,8 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private GameObject checkBoxs;
+    [SerializeField] private UnitMove unitMove;
     private GameplayManager gameplayManager;
-    private bool isMove = false;
 
     public void Init(GameplayManager gameplayManager)
     {
@@ -32,12 +32,7 @@ public class Player : MonoBehaviour
 
     public void PlayerMove(Vector3 position)
     {
-        if (!isMove)
-        {
-            StartCoroutine(MoveToDestination(position));
-        }
-        isMove = true;
-        transform.LookAt(new Vector3(position.x, transform.position.y, position.z));
+        unitMove.Move(position);
         gameplayManager.isPlayerMovable = false;
         StartCoroutine(WaitAndUpdate(1));
     }
@@ -58,24 +53,6 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         gameplayManager.UpdatePhase(GamePhase.enemy);
-    }
-
-    private IEnumerator MoveToDestination(Vector3 destination)
-    {
-        isMove = true;
-        Vector3 startPosition = transform.position;
-        float elapsedTime = 0f;
-        float moveDuration = 1f;
-
-        while (elapsedTime < moveDuration)
-        {
-            transform.position = Vector3.Lerp(startPosition, destination, elapsedTime / moveDuration);
-            elapsedTime += Time.deltaTime;
-            yield return null; // Wait for the next frame
-        }
-
-        transform.position = destination; // Ensure we set the position to the final destination
-        isMove = false;
     }
 
 }

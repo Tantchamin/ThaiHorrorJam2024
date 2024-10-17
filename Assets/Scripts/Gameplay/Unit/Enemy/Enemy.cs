@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private List<GridStatus> movePathGrids;
     [SerializeField] private bool isLoop = false;
+    [SerializeField] private UnitMove unitMove;
     private int moveCount = 0;
 
     public void Move()
@@ -17,6 +18,7 @@ public class Enemy : MonoBehaviour
         }
 
         moveCount++;
-        transform.position = movePathGrids[moveCount].transform.position;
+        unitMove.Move(movePathGrids[moveCount].transform.position);
     }
+
 }
