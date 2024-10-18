@@ -22,13 +22,13 @@ public class ChatSystem : MonoBehaviour
 
     void Start()
     {
-        gameplayManager.isPlayerMovable = false;
         // Display the first message when the game starts
         AdvanceChat();
+        gameplayManager.isChat = true;
     }
     private void OnEnable()
     {
-        foreach(Transform obj in gameObject.transform)
+        foreach (Transform obj in gameObject.transform)
         {
             obj.gameObject.SetActive(true);
         }
@@ -61,9 +61,9 @@ public class ChatSystem : MonoBehaviour
         }
         else
         {
+            gameplayManager.isChat = false;
             this.enabled = false;
             //chatText.text = "End of conversation.";
-            gameplayManager.isPlayerMovable = true;
         }
     }
     IEnumerator TypeText(string message)

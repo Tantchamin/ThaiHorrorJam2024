@@ -36,7 +36,7 @@ public class GridStatus : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (isSelectable)
+        if (isSelectable && !gameplayManager.isChat)
             SelectGrid();
             objRenderer.material.color = originalColor;
     }
@@ -52,7 +52,7 @@ public class GridStatus : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if(isSelectable && gameplayManager.isPlayerMovable)
+        if(isSelectable && !gameplayManager.isChat && gameplayManager.isPlayerMovable)
             objRenderer.material.color = hoverColor;
     }
 

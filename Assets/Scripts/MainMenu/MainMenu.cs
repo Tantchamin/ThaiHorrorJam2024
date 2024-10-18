@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        SoundManager soundManager = SoundManager.GetInstance();
+        soundManager = SoundManager.GetInstance();
         select.SetStageStar();
     }
 

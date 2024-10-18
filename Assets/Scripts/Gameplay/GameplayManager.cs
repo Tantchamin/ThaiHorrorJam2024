@@ -24,6 +24,7 @@ public class GameplayManager : MonoBehaviour
     public bool isPlayerMovable = true;
     public int star = 0;
     public int stageNumber = 0;
+    public bool isChat = false;
 
     private void Awake()
     {

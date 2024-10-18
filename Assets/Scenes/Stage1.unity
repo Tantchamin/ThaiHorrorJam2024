@@ -1404,6 +1404,7 @@ MonoBehaviour:
   isPlayerMovable: 1
   star: 0
   stageNumber: 0
+  isChat: 0
 --- !u!1 &542556359
 GameObject:
   m_ObjectHideFlags: 0
