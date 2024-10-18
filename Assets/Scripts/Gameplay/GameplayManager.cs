@@ -25,10 +25,12 @@ public class GameplayManager : MonoBehaviour
     public int star = 0;
     public int stageNumber = 0;
     public bool isChat = false;
+    private SoundManager soundManager;
 
     private void Awake()
     {
         stageNumber = PlayerPrefs.GetInt("stage");
+        soundManager = SoundManager.GetInstance();
     }
 
     void Start()
@@ -38,6 +40,7 @@ public class GameplayManager : MonoBehaviour
         gridManager.grids[0].SelectGrid();
         player.ActivateCheckBox();
         gameplayUiManager.TurnAdjust(turnCount);
+        soundManager.PlayBgm("PlayBGM1", true);
     }
 
     public void UpdatePhase(GamePhase phase)

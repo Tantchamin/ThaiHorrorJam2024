@@ -5963,6 +5963,10 @@ MonoBehaviour:
   sounds:
   - key: Button1
     sound: {fileID: 8300000, guid: 625ad317b451ec147984e94636d712a6, type: 3}
+  - key: PlayBGM1
+    sound: {fileID: 8300000, guid: 4e6202e97e542482abbbadaddf0423ad, type: 3}
+  - key: MainBGM1
+    sound: {fileID: 8300000, guid: 28174c424d16e44d3bd7f41a32eaec47, type: 3}
 --- !u!4 &2120961641
 Transform:
   m_ObjectHideFlags: 0
