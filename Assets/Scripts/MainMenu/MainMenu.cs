@@ -18,9 +18,10 @@ public class MainMenu : MonoBehaviour
         select.SetStageStar();
     }
 
-    public void SelectMenuActive(bool isActive)
+    public void SelectMenuActive()
     {
-        selectMenu.SetActive(isActive);
+        bool isActive = selectMenu.activeSelf;
+        selectMenu.SetActive(!isActive);
     }
 
     public void SelectStage(int stage)
