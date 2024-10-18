@@ -6,10 +6,16 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject selectMenu;
+    [SerializeField] private SelectMenu select;
 
     private void Awake()
     {
         SaveLoadData.LoadScoreData();
+    }
+
+    private void Start()
+    {
+        select.SetStageStar();
     }
 
     public void SelectMenuActive(bool isActive)
