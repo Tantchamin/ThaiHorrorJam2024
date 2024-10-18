@@ -17,7 +17,6 @@ public class GameplayUiManager : MonoBehaviour
     public TMP_Text endingText;
 
     public List<Image> starList;
-
     private void Start()
     {
         stageText.text = $"Stage {gameplayManager.stageNumber}";
@@ -39,7 +38,7 @@ public class GameplayUiManager : MonoBehaviour
 
     public void CollectStar(int index)
     {
-        starList[index].color = Color.white;
+        starList[index].enabled = true;
     }
 
     public void ResetStar()
