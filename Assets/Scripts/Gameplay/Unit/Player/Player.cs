@@ -7,10 +7,12 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject checkBoxs;
     [SerializeField] private UnitMove unitMove;
     private GameplayManager gameplayManager;
+    private SoundManager soundManager;
 
     public void Init(GameplayManager gameplayManager)
     {
         this.gameplayManager = gameplayManager;
+        soundManager = SoundManager.GetInstance();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -18,14 +20,17 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Goal"))
         {
             gameplayManager.GameFinish(true);
+            soundManager.PlaySound("Goal", false);
         }
         else if (other.CompareTag("Enemy"))
         {
             gameplayManager.GameFinish(false);
+            soundManager.PlaySound("RedHood", false);
         }
         else if (other.CompareTag("Star"))
         {
             gameplayManager.CollectStar();
+            soundManager.PlaySound("Star", false);
             Destroy(other.gameObject);
         }
     }
