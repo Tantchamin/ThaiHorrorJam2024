@@ -66,7 +66,7 @@ public class GameplayManager : MonoBehaviour
                 {
                     gameplayUiManager.OpenFinishUi(isWin);
                     ScoreData.SetStar(star, stageNumber);
-                    SaveLoadData.SaveScoreData();
+                    if (isWin) SaveLoadData.SaveScoreData();
                     return;
                 }
                 UpdatePhase(GamePhase.end);
