@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Prologue : MonoBehaviour
 {
-    public Image scene1, scene2, scene3, scene4, scene5,scene6;
+    public Image scene1, scene2, scene3, scene4, scene5,scene6,scene7;
     public List<Image> scenelist;
     private bool fadeOut, fadeIn;
     private int page;
@@ -21,6 +21,7 @@ public class Prologue : MonoBehaviour
         scenelist.Add(this.scene4);
         scenelist.Add(this.scene5);
         scenelist.Add(this.scene6);
+        scenelist.Add(this.scene7);
         page = 0;
         FadeInFuc(scenelist[0]);
     }
@@ -32,7 +33,7 @@ public class Prologue : MonoBehaviour
             scenelist[page].gameObject.SetActive(false);
             // FadeOutFuc(scenelist[page]);
             page+=1;
-            if(page == 5){
+            if(page == 6){
                 SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
             }
         }
