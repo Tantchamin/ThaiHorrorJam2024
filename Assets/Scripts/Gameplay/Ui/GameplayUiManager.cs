@@ -44,7 +44,6 @@ public class GameplayUiManager : MonoBehaviour
     public void CollectStar(int conditionIndex)
     {
         conditionTextList[conditionIndex].color = Color.green;
-        Debug.Log(gameplayManager.star);
         starList[gameplayManager.star].enabled = true;
     }
 
