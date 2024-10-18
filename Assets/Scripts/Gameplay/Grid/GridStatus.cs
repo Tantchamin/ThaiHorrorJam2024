@@ -52,7 +52,7 @@ public class GridStatus : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if(isSelectable)
+        if(isSelectable && gameplayManager.isPlayerMovable)
             objRenderer.material.color = hoverColor;
     }
 

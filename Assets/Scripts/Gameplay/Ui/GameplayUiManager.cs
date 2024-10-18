@@ -17,6 +17,8 @@ public class GameplayUiManager : MonoBehaviour
     public TMP_Text endingText;
 
     public List<Image> starList;
+    public List<TMP_Text> conditionTextList;
+
     private void Start()
     {
         stageText.text = $"Stage {gameplayManager.stageNumber}";
@@ -36,23 +38,17 @@ public class GameplayUiManager : MonoBehaviour
         finishUi.SetActive(true);
     }
 
-    public void CollectStar(int index)
+    public void CollectStar(int conditionIndex)
     {
-        starList[index].enabled = true;
-    }
-
-    public void ResetStar()
-    {
-        foreach(Image star in starList)
-        {
-            star.color = Color.black;
-        }
+        conditionTextList[conditionIndex].color = Color.green;
+        starList[gameplayManager.star].enabled = true;
     }
 
     public void TurnAdjust(int turn)
     {
         turnText.text = $"Turn : {turn}";
     }
+
     public void OpenClosePauseUi()
     {
         bool isOpen = pauseUi.activeSelf;

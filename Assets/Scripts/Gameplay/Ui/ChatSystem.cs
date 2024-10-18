@@ -18,9 +18,11 @@ public class ChatSystem : MonoBehaviour
     };
     // Keeps track of the current message index
     private int currentMessageIndex = -1;
+    public GameplayManager gameplayManager;
 
     void Start()
     {
+        gameplayManager.isPlayerMovable = false;
         // Display the first message when the game starts
         AdvanceChat();
     }
@@ -61,6 +63,7 @@ public class ChatSystem : MonoBehaviour
         {
             this.enabled = false;
             //chatText.text = "End of conversation.";
+            gameplayManager.isPlayerMovable = true;
         }
     }
     IEnumerator TypeText(string message)

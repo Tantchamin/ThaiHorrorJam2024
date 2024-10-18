@@ -22,7 +22,7 @@ public class GameplayManager : MonoBehaviour
     private bool isFinish = false;
     private bool isWin = false;
     public bool isPlayerMovable = true;
-    private int star = 0;
+    public int star = 0;
     public int stageNumber = 0;
 
     private void Awake()
@@ -58,19 +58,19 @@ public class GameplayManager : MonoBehaviour
                 StartCoroutine(WaitAndChangePhase(1, GamePhase.result));
                 break;
             case GamePhase.result:
-                if(isFinish)
+                if (isFinish)
                 {
                     gameplayUiManager.OpenFinishUi(isWin);
                     ScoreData.SetStar(star, stageNumber);
                     SaveLoadData.SaveScoreData();
                     return;
                 }
-                StartCoroutine(WaitAndChangePhase(1, GamePhase.end));
+                UpdatePhase(GamePhase.end);
                 break;
             case GamePhase.end:
                 turnCount++;
                 gameplayUiManager.TurnAdjust(turnCount);
-                StartCoroutine(WaitAndChangePhase(1, GamePhase.player));
+                UpdatePhase(GamePhase.player);
                 break;
         }
     }
