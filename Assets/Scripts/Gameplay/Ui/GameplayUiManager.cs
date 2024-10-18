@@ -36,7 +36,7 @@ public class GameplayUiManager : MonoBehaviour
             endingUi.SetActive(true);
             return;
         }
-        finishText.text = isWin ? "You did it!" : "Little Red Riding Hood got you.";
+        finishText.text = isWin ? "You did it!" : "You Lose.";
         nextButton.interactable = isWin;
         finishUi.SetActive(true);
     }
