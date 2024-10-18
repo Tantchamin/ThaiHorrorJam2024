@@ -19,9 +19,12 @@ public class GameplayUiManager : MonoBehaviour
     public List<Image> starList;
     public List<TMP_Text> conditionTextList;
 
+    private SoundManager soundManager;
+
     private void Start()
     {
         stageText.text = $"Stage {gameplayManager.stageNumber}";
+        soundManager = SoundManager.GetInstance();
     }
 
     public void OpenFinishUi(bool isWin)
@@ -51,6 +54,7 @@ public class GameplayUiManager : MonoBehaviour
 
     public void OpenClosePauseUi()
     {
+        soundManager.PlayButton("Button1");
         bool isOpen = pauseUi.activeSelf;
         pauseUi.SetActive(!isOpen);
     }

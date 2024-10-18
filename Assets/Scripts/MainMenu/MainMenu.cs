@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         soundManager = SoundManager.GetInstance();
+        soundManager.PlayBgm("MainBGM1", true);
         select.SetStageStar();
     }
 
