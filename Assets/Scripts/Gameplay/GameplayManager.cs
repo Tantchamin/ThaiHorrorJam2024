@@ -87,10 +87,13 @@ public class GameplayManager : MonoBehaviour
 
     public void GameFinish(bool isWin)
     {
-        if(isWin) GetStar(0);
-        if (turnCount <= conditionTurnCount)
+        if (isWin)
         {
-            GetStar(2);
+            GetStar(0);
+            if (turnCount <= conditionTurnCount)
+            {
+                GetStar(2);
+            }
         }
         isFinish = true;
         this.isWin = isWin;
